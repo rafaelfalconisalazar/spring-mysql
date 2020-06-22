@@ -1,6 +1,5 @@
 package com.rafael.falconi.shoppingcart.entities;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,23 +8,22 @@ import javax.persistence.Id;
 
 @Entity
 public class Product {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private int stock;
-	
+
 	@Column(length = 50)
 	private String name;
-	
+
 	private String description;
-	
-	
+
 	private double price;
-	
+
 	public Product() {
-		
+
 	}
 
 	public Product(int id, int stock, String name, String description, double price) {
@@ -76,5 +74,5 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+
 }
