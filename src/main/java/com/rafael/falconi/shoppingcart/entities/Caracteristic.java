@@ -17,7 +17,7 @@ public class Caracteristic {
 
 	private String description;
 
-	@ManyToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@ManyToOne(optional = true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Product product;
 
 	public Caracteristic() {
