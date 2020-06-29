@@ -28,7 +28,6 @@ public class Product {
 
 	public Product(int id, int stock, String name, String description, double price) {
 		super();
-		this.id = id;
 		this.stock = stock;
 		this.name = name;
 		this.description = description;
