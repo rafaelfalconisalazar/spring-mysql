@@ -33,6 +33,27 @@ public class ProductResourceTest {
 		restService.restBuilder().path(ProductResource.PRODUCT).body(productDto).post().build();
 	}
 	
+	@Test
+	public void readAllProductsTest() {
+		String json= restService.restBuilder(new RestBuilder<String>()).clazz(String.class).path(ProductResource.PRODUCT).get().build();
+		System.out.println("------>"+json);
+	}
+	@Test
+	public void readProductByIdTest() {
+		String json= restService.restBuilder(new RestBuilder<String>()).clazz(String.class).path(ProductResource.PRODUCT)
+				.path(ProductResource.ID).expand(1).get().build();
+		System.out.println("------>"+json);
+	}
+	
+	@Test
+	public void editProductTest() {
+		this.productDto.setName("laptop");
+		this.productDto.setDescription("laptop msi");
+		restService.restBuilder().path(ProductResource.PRODUCT)
+		.path(ProductResource.ID).expand(1).body(productDto).put().build();
+		
+		
+	}
 	
 	
 }
