@@ -33,6 +33,7 @@ public class Product {
 		this.description = description;
 		this.price = price;
 	}
+	
 
 	public int getId() {
 		return id;

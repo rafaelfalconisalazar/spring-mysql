@@ -9,7 +9,9 @@ public class ProductDto {
 	private String name, description;
 
 	private double price;
-
+	
+	
+	
 	public ProductDto(int id, int stock, String name, String description, double price) {
 		super();
 		this.id = id;
@@ -18,7 +20,6 @@ public class ProductDto {
 		this.description = description;
 		this.price = price;
 	}
-	
 		
 	public ProductDto(Product product) {
 		this.id= product.getId();

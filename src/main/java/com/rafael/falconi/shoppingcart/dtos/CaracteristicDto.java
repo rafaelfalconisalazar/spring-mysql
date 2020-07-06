@@ -9,6 +9,7 @@ public class CaracteristicDto {
 	private String description;
 
 	private ProductDto product;
+	
 
 	public CaracteristicDto(int id, String description, ProductDto product) {
 		super();
@@ -16,6 +17,7 @@ public class CaracteristicDto {
 		this.description = description;
 		this.product = product;
 	}
+	
 
 	public CaracteristicDto(Caracteristic caracteristic) {
 		this.id = caracteristic.getId();

@@ -30,6 +30,7 @@ public class Caracteristic {
 		this.description = description;
 		this.product = product;
 	}
+	
 
 	public int getId() {
 		return id;
