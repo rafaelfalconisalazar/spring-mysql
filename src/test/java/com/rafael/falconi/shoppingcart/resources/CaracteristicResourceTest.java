@@ -19,23 +19,49 @@ import com.rafael.falconi.shoppingcart.dtos.ProductDto;
 public class CaracteristicResourceTest {
 
 	@Rule
-	public ExpectedException thrown= ExpectedException.none();
-	
+	public ExpectedException thrown = ExpectedException.none();
+
 	@Autowired
 	private RestService restService;
 	private ProductDto productDto;
 	private CaracteristicDto caracteristicDto;
-	
-	@Before 
+
+	@Before
 	public void Before() {
-		this.productDto= new ProductDto(1, 5, "backpac", "wallet made from lether", 5.50);
-		this.caracteristicDto= new CaracteristicDto(1, "color", this.productDto);
-		
+		this.productDto = new ProductDto(1, 5, "backpac", "wallet made from lether", 5.50);
+		this.caracteristicDto = new CaracteristicDto(1, "color", this.productDto);
+
 	}
-	
+
 	@Test
-	public void test() {
+	public void createCaracteristic() {
 		restService.restBuilder().path(CaracteristicResource.CARACTERISTIC).body(caracteristicDto).post().build();
+	}
+
+	@Test
+	public void readAllCaracteristicsTest() {
+		String json = restService.restBuilder(new RestBuilder<String>()).clazz(String.class)
+				.path(CaracteristicResource.CARACTERISTIC).get().build();
+
+		System.out.println("-->" + json);
+	}
+
+	@Test
+	public void readCaracteristicByIdTest() {
+		String json = restService.restBuilder(new RestBuilder<String>()).clazz(String.class)
+				.path(CaracteristicResource.CARACTERISTIC).path(CaracteristicResource.ID).expand(1).get().build();
+
+		System.out.println("-->" + json);
+	}
+
+	@Test
+	public void editCaracteristicTest() {
+		this.caracteristicDto.setDescription("material");
+		this.productDto.setId(15);
+		restService.restBuilder().path(CaracteristicResource.CARACTERISTIC)
+		.path(CaracteristicResource.ID).expand(1).body(caracteristicDto).put().build();
+
+		
 	}
 
 }
