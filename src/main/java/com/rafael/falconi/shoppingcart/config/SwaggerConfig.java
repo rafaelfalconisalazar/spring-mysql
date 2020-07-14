@@ -31,9 +31,9 @@ public class SwaggerConfig  extends WebMvcConfigurationSupport{
 	}
 	
 	// http://localhost:8080/api/v1/swagger-ui.html
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("Employee-Category")
-                .description("BETCA. Back-end con Tecnologías de Código Abierto (SPRING). Employee-Category. https://github.com/rafaelfalconi/Employee-Spring/wiki").build();
+	private ApiInfo apiInfo() {
+        return new ApiInfoBuilder().title("Demo")
+                .description("Demo de spring boot with mysql and jpa. https://github.com/rafaelfalconisalazar/spring-mysql").build();
     }
 
 	@Override
